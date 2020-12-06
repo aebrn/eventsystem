@@ -1,0 +1,43 @@
+package pw.highimhell.eventsystem;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+/**
+ * @author hell
+ * 12/3/2020
+ */
+public final class EventManager {
+    private static final EventManager INSTANCE = new EventManager();
+
+    private final List<MethodData> methods = new CopyOnWriteArrayList<>();
+
+    public void register(Object object) {
+        for (Method method : object.getClass().getDeclaredMethods()) {
+            MethodData methodData = new MethodData(object, method);
+            if (method.isAnnotationPresent(Listener.class)  && !methods.contains(methodData)) {
+                methods.add(methodData);
+            }
+        }
+    }
+
+    public void unregister(Object object) {
+        methods.removeIf(methodData -> methodData.getObject() == object);
+    }
+
+    public void call(Event event) {
+        for (MethodData methodData : methods) {
+            try {
+                methodData.getMethod().invoke(methodData.getObject(), event);
+            } catch (IllegalAccessException | InvocationTargetException exception) {
+                exception.printStackTrace();
+            }
+        }
+    }
+
+    public static EventManager getInstance() {
+        return INSTANCE;
+    }
+}
