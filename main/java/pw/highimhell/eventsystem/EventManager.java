@@ -24,7 +24,7 @@ public final class EventManager {
     }
 
     public void unregister(Object object) {
-        methods.removeIf(methodData -> methodData.getObject() == object && methods.contains(methodData));
+        methods.removeIf(methodData -> methodData.getObject() == object);
     }
 
     public void call(Event event) {
