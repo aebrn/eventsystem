@@ -17,4 +17,4 @@
   <code>@Listener</code><br>
   <code>public void onMyEvent(MyEvent event) {</code><br>
   <code>doStuff();</code><br>
-  }</code>
+  <code>}</code>
