@@ -24,15 +24,17 @@ public final class EventManager {
     }
 
     public void unregister(Object object) {
-        methods.removeIf(methodData -> methodData.getObject() == object);
+        methods.removeIf(methodData -> methodData.getObject() == object && methods.contains(methodData));
     }
 
     public void call(Event event) {
         for (MethodData methodData : methods) {
-            try {
-                methodData.getMethod().invoke(methodData.getObject(), event);
-            } catch (IllegalAccessException | InvocationTargetException exception) {
-                exception.printStackTrace();
+            if (methodData.getObject() != null) {
+                try {
+                    methodData.getMethod().invoke(methodData.getObject(), event);
+                } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException exception) {
+                    exception.printStackTrace();
+                }
             }
         }
     }
