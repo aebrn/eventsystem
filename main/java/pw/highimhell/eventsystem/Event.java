@@ -14,4 +14,9 @@ public class Event {
     public void setCancelled(boolean flag) {
         this.cancelled = flag;
     }
+
+    public Event call() {
+        EventManager.getInstance().call(this);
+        return this;
+    }
 }
