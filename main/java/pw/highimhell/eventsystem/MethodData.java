@@ -9,10 +9,12 @@ import java.lang.reflect.Method;
 public final class MethodData {
     private final Object object;
     private final Method method;
+    private final EventPriority priority;
 
-    public MethodData(Object object, Method method) {
+    public MethodData(Object object, Method method, EventPriority priority) {
         this.object = object;
         this.method = method;
+        this.priority = priority;
     }
 
     public Object getObject() {
@@ -21,5 +23,9 @@ public final class MethodData {
 
     public Method getMethod() {
         return method;
+    }
+
+    public EventPriority getPriority() {
+        return priority;
     }
 }
