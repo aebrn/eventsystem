@@ -17,8 +17,4 @@
   <code>@Listener</code><br>
   <code>public void onMyEvent(MyEvent event) {</code><br>
   <code>doStuff();</code><br>
-<<<<<<< Updated upstream
   <code>}</code>
-=======
-  <code>}</code>
->>>>>>> Stashed changes
