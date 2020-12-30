@@ -7,7 +7,9 @@
   <code>MyEvent myEvent = new MyEvent();</code><br>
   <code>myEvent.doStuff();</code><br>
   <code>EventManager.getInstance().call(myEvent);</code>
-
++ As well as<br>
+  <code>new MyEvent().call();</code><br>
+  
 **_Listening_**
 + Listen for events in the class<br>
   <code>EventManager.getInstance().register(this);</code>
