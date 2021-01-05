@@ -1,4 +1,4 @@
-package pw.highimhell.eventsystem;
+package io.aebrn.eventsystem;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * @author hell
+ * @author aebrn
  * 12/3/2020
  */
 public final class EventManager {

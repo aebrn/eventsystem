@@ -1,9 +1,9 @@
-package pw.highimhell.eventsystem;
+package io.aebrn.eventsystem;
 
-import pw.highimhell.eventsystem.interfaces.Cancellable;
+import io.aebrn.eventsystem.interfaces.Cancellable;
 
 /**
- * @author hell
+ * @author aebrn
  * 12/3/2020
  */
 public class Event implements Cancellable {

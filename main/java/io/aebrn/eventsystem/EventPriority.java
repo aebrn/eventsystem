@@ -1,7 +1,7 @@
-package pw.highimhell.eventsystem;
+package io.aebrn.eventsystem;
 
 /**
- * @author hell
+ * @author aebrn
  * 12/27/2020
  */
 public enum EventPriority {

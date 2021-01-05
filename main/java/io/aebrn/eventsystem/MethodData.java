@@ -1,9 +1,9 @@
-package pw.highimhell.eventsystem;
+package io.aebrn.eventsystem;
 
 import java.lang.reflect.Method;
 
 /**
- * @author hell
+ * @author aebrn
  * 12/3/2020
  */
 public final class MethodData {
