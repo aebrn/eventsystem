@@ -30,7 +30,7 @@ public final class EventManager {
     }
 
     public void unregister(Object object) {
-        methods.removeIf(methodData -> methodData.getObject() == object);
+        methods.removeIf(methodData -> object != null && methodData.getObject() == object);
     }
 
     public void call(Event event) {
